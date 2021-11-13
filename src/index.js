@@ -90,7 +90,7 @@ app.put('/todos/:id', checksExistsUserAccount, checkExistsTodosId, (request, res
   idExists.title = title
   idExists.deadline = deadline
 
-  return response.status(201).send()
+  return response.status(201).send(idExists)
 
 });
 
@@ -98,7 +98,7 @@ app.patch('/todos/:id/done', checksExistsUserAccount, checkExistsTodosId, (reque
   const {idExists} = request
     
   idExists.done = true
-  return response.status(201).send()
+  return response.status(201).send(idExists)
 
 });
 
